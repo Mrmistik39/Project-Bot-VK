@@ -83,7 +83,7 @@ class FilterCommand(CommandInterface):
                     result.save(file_name, "PNG")
                 VkApi.send_photo(message.peer_id, [file_name], 'Готово!')
                 self.times.append(time.time() - time_start)
-                # os.remove(file_name)
+                os.remove(file_name)
             return
         message.send_message('Изображение не найдено')
 
